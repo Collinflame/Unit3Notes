@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Picker 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc.
+            Convallis aenean et tortor at risus viverra adipiscing.
+            Phasellus vestibulum lorem sed risus ultricies tristique nulla.
+            Elementum nibh tellus molestie nunc non blandit.
+            Eget felis eget nunc lobortis mattis aliquam faucibus.
+            Nunc pulvinar sapien et ligula ullamcorper malesuada proin.
+            Eget egestas purus viverra accumsan. Sodales neque sodales ut etiam.
+            Mattis aliquam faucibus purus in massa tempor nec feugiat nisl.
+            Bibendum at varius vel pharetra vel turpis nunc. Porttitor rhoncus dolor purus non enim.
+            Mauris pharetra et ultrices neque ornare. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut.
+            Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Mauris a diam maecenas sed enim ut sem.
+            Faucibus in ornare quam viverra orci sagittis eu volutpat odio.
+            Volutpat consequat mauris nunc congue.</p>
+        <div class="row">
+            <h3>Background</h3>
+            <input type="color" id="bg" value="#FFFFFF">
+        </div>
+        <div class="row">
+            <h3>Text</h3>
+            <input type="color" id="txt">
+        </div>
+        <button id="clear">Clear</button>
+    </div>
+</div>
+
+<script>
+    const content = document.querySelector('.content');
+    const bg = document.getElementById('bg');
+    const txt = document.getElementById('txt');
+    const clear = document.getElementById('clear');
+
+    bg.addEventListener('change', function (e){
+       content.style.backgroundColor = e.target.value;
+    });
+
+    txt.addEventListener('change', function (e){
+        content.style.color = e.target.value;
+    });
+
+    clear.addEventListener('click', function (e){
+        content.style.backgroundColor = 'white';
+        bg.value = '#FFFFFF';
+        content.style.color = 'black';
+        txt.value = '#000000';
+    });
+</script>
+</body>
+</html>
