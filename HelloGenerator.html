@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h3>Hello Generator</h3>
+            <div class="row">
+                <div>
+                    <label for="first">First Name</label>
+                    <input type="text" id="first" name="first" style="width: 100px">
+                </div>
+                <div>
+                    <label for="second">Second Name</label>
+                    <input type="text" id="second" name="second" style="width: 100px">
+                </div>
+            </div>
+            <button id="hello">Say Hello</button>
+            <div class="text">
+            <h1></h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        const text = document.querySelector('.text');
+        const first = document.getElementById('first');
+        const second = document.getElementById('second');
+        const hello = document.getElementById('hello');
+
+        hello.addEventListener('click', function(e) {
+            firstname = first.value;
+            secondname = second.value;
+
+            const message = document.createElement('h1');
+            message.innerHTML = `Hello ${firstname} ${secondname}!`;
+            text.insertAdjacentElement('afterbegin', message);
+        });
+
+    </script>
+</body>
+</html>
