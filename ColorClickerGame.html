@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <button id="1" class="box" style="background-color: red;"></button>
+                <button id="2" class="box" style="background-color: green;"></button>
+                <button id="3" class="box" style="background-color: blue;"></button>
+                <button id="4" class="box" style="background-color: pink;"></button>
+                <button id="6" class="box" style="background-color: violet;"></button>
+            </div>
+            <div class="row">
+                <button id="7" class="box" style="background-color: yellow"></button>
+                <button id="8" class="box" style="background-color: lime;"></button>
+                <button id="9" class="box" style="background-color: cyan;"></button>
+                <button id="10" class="box" style="background-color: purple;"></button>
+                <button id="12" class="box" style="background-color: orange;"></button>
+            </div>
+            <div class="row">
+                <h1>Guess The Color!</h1>
+            </div>
+            <div class="row">
+                <h2><div id="color"></div></h2>
+                <h3><div id="score"></div></h3>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const content = document.querySelector('.content');
+    const red = document.getElementById('1');
+    const green = document.getElementById('2');
+    const blue = document.getElementById('3');
+    const pink = document.getElementById('4');
+    const violet = document.getElementById('6');
+    const yellow = document.getElementById('7');
+    const lime = document.getElementById('8');
+    const cyan = document.getElementById('9');
+    const purple = document.getElementById('10');
+    const orange = document.getElementById('12');
+    let displaycolor = document.getElementById('color');
+    let displayscore = document.getElementById('score');
+    let currentcolor = "";
+    let score = 0;
+    let answers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    let randomnum = Math.floor(Math.random() * answers.length);
+
+    if (answers[randomnum] === 2) {
+        currentcolor = 'Red'
+    } else if (answers[randomnum] === 3) {
+        currentcolor = 'Green'
+    } else if (answers[randomnum] === 4) {
+        currentcolor = 'Blue'
+    } else if (answers[randomnum] === 5) {
+        currentcolor = 'Pink'
+    } else if (answers[randomnum] === 6) {
+        currentcolor = 'Violet'
+    } else if (answers[randomnum] === 7) {
+        currentcolor = 'Yellow'
+    } else if (answers[randomnum] === 8) {
+        currentcolor = 'Lime'
+    } else if (answers[randomnum] === 9) {
+        currentcolor = 'Cyan'
+    } else if (answers[randomnum] === 10) {
+        currentcolor = 'Purple'
+    } else if (answers[randomnum] === 11) {
+        currentcolor = 'Orange'
+    }
+    displaycolor.textContent = `What Box is ${currentcolor}?`;
+
+    red.addEventListener('click', function (e) {
+        if (answers[randomnum] === 2) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    green.addEventListener('click', function (e) {
+        if (answers[randomnum] === 3) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    blue.addEventListener('click', function (e) {
+        if (answers[randomnum] === 4) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    pink.addEventListener('click', function (e) {
+        if (answers[randomnum] === 5) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    violet.addEventListener('click', function (e) {
+        if (answers[randomnum] === 6) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    yellow.addEventListener('click', function (e) {
+        if (answers[randomnum] === 7) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    lime.addEventListener('click', function (e) {
+        if (answers[randomnum] === 8) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    cyan.addEventListener('click', function (e) {
+        if (answers[randomnum] === 9) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    purple.addEventListener('click', function (e) {
+        if (answers[randomnum] === 10) {
+            add()
+        } else {
+            remove()
+        }
+    });
+
+    orange.addEventListener('click', function (e) {
+        if (answers[randomnum] === 11) {
+            add()
+        } else {
+            remove()
+        }
+    });
+    function add(){
+        score = score + 1;
+        return score;
+    }
+
+    function remove(){
+        score = score - 1;
+        return score;
+    }
+    displayscore.textContent = `Score: ${score}`;
+
+</script>
+</html>

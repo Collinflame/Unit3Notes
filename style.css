@@ -55,6 +55,7 @@ section header{
 .row {
     display: flex;
     gap: 16px;
+    margin-bottom: 10px;
 }
 
 
@@ -74,4 +75,10 @@ section header{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.box{
+    border-radius: 8px;
+    height: 100px;
+    width: 100PX;
 }
