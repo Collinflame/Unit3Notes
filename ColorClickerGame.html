@@ -46,11 +46,12 @@
     const orange = document.getElementById('12');
     let displaycolor = document.getElementById('color');
     let displayscore = document.getElementById('score');
-    let currentcolor = "";
     let score = 0;
+    let currentcolor = "";
+
+function question (){
     let answers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
     let randomnum = Math.floor(Math.random() * answers.length);
-
     if (answers[randomnum] === 2) {
         currentcolor = 'Red'
     } else if (answers[randomnum] === 3) {
@@ -73,96 +74,119 @@
         currentcolor = 'Orange'
     }
     displaycolor.textContent = `What Box is ${currentcolor}?`;
+    return currentcolor;
+};
+    question ();
 
     red.addEventListener('click', function (e) {
-        if (answers[randomnum] === 2) {
-            add()
+        if (currentcolor === "Red") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     green.addEventListener('click', function (e) {
-        if (answers[randomnum] === 3) {
-            add()
+        if (currentcolor === "Green") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     blue.addEventListener('click', function (e) {
-        if (answers[randomnum] === 4) {
-            add()
+        if (currentcolor === "Blue") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     pink.addEventListener('click', function (e) {
-        if (answers[randomnum] === 5) {
-            add()
+        if (currentcolor === "Pink") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     violet.addEventListener('click', function (e) {
-        if (answers[randomnum] === 6) {
-            add()
+        if (currentcolor === "Violet") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     yellow.addEventListener('click', function (e) {
-        if (answers[randomnum] === 7) {
-            add()
+        if (currentcolor === "Yellow") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     lime.addEventListener('click', function (e) {
-        if (answers[randomnum] === 8) {
-            add()
+        if (currentcolor === "Lime") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     cyan.addEventListener('click', function (e) {
-        if (answers[randomnum] === 9) {
-            add()
+        if (currentcolor === "Cyan") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     purple.addEventListener('click', function (e) {
-        if (answers[randomnum] === 10) {
-            add()
+        if (currentcolor === "Purple") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
 
     orange.addEventListener('click', function (e) {
-        if (answers[randomnum] === 11) {
-            add()
+        if (currentcolor === "Orange") {
+            score++;
+            displayscore.textContent = `Score: ${score}`;
+            question ()
         } else {
-            remove()
+            score--;
+            displayscore.textContent = `Score: ${score}`;
         }
     });
-    function add(){
-        score = score + 1;
-        return score;
-    }
-
-    function remove(){
-        score = score - 1;
-        return score;
-    }
-    displayscore.textContent = `Score: ${score}`;
 
 </script>
 </html>
