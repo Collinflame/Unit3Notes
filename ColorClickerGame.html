@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <title>Color Clicker Game</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="content">
+            <h1>Guess The Color!</h1>
+            <div class="row">
+                <label for="user">Enter Username</label>
+                <input type="text" id="user" name="user" style="width: 100px">
+            <button id="username">Confirm Username</button>
+                <div class="text"></div>
+            </div>
             <div class="row">
                 <button id="1" class="box" style="background-color: red;"></button>
                 <button id="2" class="box" style="background-color: green;"></button>
@@ -23,9 +35,6 @@
                 <button id="12" class="box" style="background-color: orange;"></button>
             </div>
             <div class="row">
-                <h1>Guess The Color!</h1>
-            </div>
-            <div class="row">
                 <h2><div id="color"></div></h2>
                 <h3><div id="score"></div></h3>
             </div>
@@ -33,6 +42,23 @@
     </div>
 </body>
 <script>
+    const text = document.querySelector('.text');
+    const hidden = document.querySelector('.hidden')
+    const user = document.getElementById('user');
+    const username = document.getElementById('username');
+
+    username.addEventListener('click', function(e) {
+        users = user.value;
+
+        const message = document.createElement('h1');
+        message.innerHTML = `Hello ${users}!`;
+        text.insertAdjacentElement('afterbegin', message);
+
+        first.value = '';
+        username.classList.add("hidden");
+        user.classList.add("hidden");
+    });
+
     const content = document.querySelector('.content');
     const red = document.getElementById('1');
     const green = document.getElementById('2');
@@ -77,6 +103,7 @@ function question (){
     return currentcolor;
 };
     question ();
+    displayscore.textContent = `Score: ${score}`;
 
     red.addEventListener('click', function (e) {
         if (currentcolor === "Red") {
@@ -86,6 +113,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -97,6 +125,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -108,6 +137,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -119,6 +149,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -130,6 +161,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -141,6 +173,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -152,6 +185,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -163,6 +197,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -174,6 +209,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
@@ -185,6 +221,7 @@ function question (){
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
+            question ()
         }
     });
 
