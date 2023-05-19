@@ -6,18 +6,19 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .hidden{
-            display:none;
-        }
+             display:none;
+         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="content">
-            <h1>Guess The Color!</h1>
+            <h1>Pick The Right Color!</h1>
             <div class="row">
-                <label for="user">Enter Username</label>
+                <label for="user" id="sad">Enter Username</label>
                 <input type="text" id="user" name="user" style="width: 100px">
             <button id="username">Confirm Username</button>
+                <img id="picture" width="70" height="70" src="https://i.redd.it/7ayjc8s4j2n61.png">
                 <div class="text"></div>
             </div>
             <div class="row">
@@ -38,42 +39,59 @@
                 <h2><div id="color"></div></h2>
                 <h3><div id="score"></div></h3>
             </div>
+            <fieldset id="store">
+                <legend><h3>Shop!</h3></legend>
+                <div class="row">
+                    <label for="two">2 Points For Right Answer</label>
+                    <button id="two">Buy! at 75 Points</button>
+                </div>
+                <br>
+                <div class="row">
+                    <label for="three">3 Points For Right Answer</label>
+                    <button id="three">Buy! at 100 Points</button>
+                </div>
+            </fieldset>
+            <button id="restart">Restart</button>
+            <h1><div id="end"></div></h1>
         </div>
     </div>
 </body>
 <script>
-    const text = document.querySelector('.text');
-    const hidden = document.querySelector('.hidden')
-    const user = document.getElementById('user');
-    const username = document.getElementById('username');
+    let text = document.querySelector('.text');
+    let user = document.getElementById('user');
+    let username = document.getElementById('username');
+    let bye = document.getElementById('sad');
+    let picture = document.getElementById('picture');
 
     username.addEventListener('click', function(e) {
         users = user.value;
 
-        const message = document.createElement('h1');
+        let message = document.createElement('h1');
         message.innerHTML = `Hello ${users}!`;
         text.insertAdjacentElement('afterbegin', message);
 
-        first.value = '';
-        username.classList.add("hidden");
         user.classList.add("hidden");
+        username.classList.add("hidden");
+        bye.classList.add("hidden");
     });
 
-    const content = document.querySelector('.content');
-    const red = document.getElementById('1');
-    const green = document.getElementById('2');
-    const blue = document.getElementById('3');
-    const pink = document.getElementById('4');
-    const violet = document.getElementById('6');
-    const yellow = document.getElementById('7');
-    const lime = document.getElementById('8');
-    const cyan = document.getElementById('9');
-    const purple = document.getElementById('10');
-    const orange = document.getElementById('12');
+    let content = document.querySelector('.content');
+    let red = document.getElementById('1');
+    let green = document.getElementById('2');
+    let blue = document.getElementById('3');
+    let pink = document.getElementById('4');
+    let violet = document.getElementById('6');
+    let yellow = document.getElementById('7');
+    let lime = document.getElementById('8');
+    let cyan = document.getElementById('9');
+    let purple = document.getElementById('10');
+    let orange = document.getElementById('12');
     let displaycolor = document.getElementById('color');
     let displayscore = document.getElementById('score');
+    let store = document.getElementById('store');
     let score = 0;
     let currentcolor = "";
+    let displayend = document.getElementById('end');
 
 function question (){
     let answers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
@@ -109,7 +127,23 @@ function question (){
         if (currentcolor === "Red") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -121,7 +155,23 @@ function question (){
         if (currentcolor === "Green") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -133,7 +183,23 @@ function question (){
         if (currentcolor === "Blue") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -145,7 +211,23 @@ function question (){
         if (currentcolor === "Pink") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -157,7 +239,23 @@ function question (){
         if (currentcolor === "Violet") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -169,7 +267,23 @@ function question (){
         if (currentcolor === "Yellow") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -181,7 +295,23 @@ function question (){
         if (currentcolor === "Lime") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -193,7 +323,23 @@ function question (){
         if (currentcolor === "Cyan") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -205,7 +351,23 @@ function question (){
         if (currentcolor === "Purple") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -217,7 +379,23 @@ function question (){
         if (currentcolor === "Orange") {
             score++;
             displayscore.textContent = `Score: ${score}`;
-            question ()
+            question ();
+            if (score >= 50){
+                picture.src="https://as2.ftcdn.net/jpg/02/66/43/05/220_F_266430547_M5OzLU6ShpMCsqWVoGzj5Ej0T9f6HwwU.jpg"
+            };
+            if (score >= 75){
+                picture.src="https://www.phxveterinarian.com/img/9g_assets/home/image-5.jpg"
+            };
+            if (score >= 100){
+                picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
+            };
+            if (twicegrade === true){
+                score++;
+            }
+            if (thricegrade === true){
+                score++;
+            }
+            win ()
         } else {
             score--;
             displayscore.textContent = `Score: ${score}`;
@@ -225,5 +403,70 @@ function question (){
         }
     });
 
+    let twice = document.getElementById('two');
+    let thrice = document.getElementById('three');
+    let twicegrade = false;
+    let thricegrade = false;
+
+    twice.addEventListener('click', function (e){
+       if (score >= 75){
+           score = score - 75;
+           twicegrade = true;
+           displayscore.textContent = `Score: ${score}`;
+           twice.classList.add("hidden");
+       }
+    });
+    thrice.addEventListener('click', function (e){
+        if (score >= 100){
+            score = score - 100;
+            thricegrade = true;
+            displayscore.textContent = `Score: ${score}`;
+            thrice.classList.add("hidden");
+        }
+    });
+
+    function win () {
+        if (score >= 150) {
+            red.classList.add("hidden");
+            green.classList.add("hidden");
+            blue.classList.add("hidden");
+            pink.classList.add("hidden");
+            violet.classList.add("hidden");
+            yellow.classList.add("hidden");
+            lime.classList.add("hidden");
+            cyan.classList.add("hidden");
+            purple.classList.add("hidden");
+            orange.classList.add("hidden");
+            displaycolor.classList.add("hidden");
+            displayscore.classList.add("hidden");
+            store.classList.add("hidden");
+            displayend.classList.remove("hidden");
+            displayend.textContent = 'You Win!'
+        }
+    };
+
+    let restart = document.getElementById('restart');
+
+    restart.addEventListener('click', function (e){
+        red.classList.remove("hidden");
+        green.classList.remove("hidden");
+        blue.classList.remove("hidden");
+        pink.classList.remove("hidden");
+        violet.classList.remove("hidden");
+        yellow.classList.remove("hidden");
+        lime.classList.remove("hidden");
+        cyan.classList.remove("hidden");
+        purple.classList.remove("hidden");
+        orange.classList.remove("hidden");
+        displaycolor.classList.remove("hidden");
+        displayscore.classList.remove("hidden");
+        store.classList.remove("hidden");
+        displayend.classList.add("hidden");
+        score = 0;
+        picture.src="https://i.redd.it/7ayjc8s4j2n61.png";
+        let twicegrade = false;
+        let thricegrade = false;
+        displayscore.textContent = `Score: ${score}`;
+    });
 </script>
 </html>
