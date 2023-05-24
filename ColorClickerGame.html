@@ -14,7 +14,7 @@
     <div class="container">
         <div class="content">
             <h1>Pick The Right Color!</h1>
-            <h4>Win at 150 Points!</h4>
+            <h4>Win at 100 Points!</h4>
             <div class="row">
                 <label for="user" id="sad">Enter Username</label>
                 <input type="text" id="user" name="user" style="width: 100px">
@@ -44,15 +44,17 @@
                 <legend><h3>Shop!</h3></legend>
                 <div class="row">
                     <label for="two">2 Points For Right Answer</label>
-                    <button id="two">Buy! at 50 Points</button>
+                    <button id="two">Buy! at 25 Points</button>
                 </div>
                 <br>
                 <div class="row">
                     <label for="three">3 Points For Right Answer</label>
-                    <button id="three">Buy! at 75 Points</button>
+                    <button id="three">Buy! at 35 Points</button>
                 </div>
             </fieldset>
+            <form>
             <button id="restart">Restart</button>
+            </form>
             <h1><div id="end"></div></h1>
         </div>
     </div>
@@ -411,8 +413,8 @@ function question (){
     thrice.classList.add("hidden");
 
     twice.addEventListener('click', function (e){
-       if (score >= 50){
-           score = score - 50;
+       if (score >= 25){
+           score = score - 25;
            twicegrade = true;
            displayscore.textContent = `Score: ${score}`;
            twice.classList.add("hidden");
@@ -420,8 +422,8 @@ function question (){
        }
     });
     thrice.addEventListener('click', function (e){
-        if (score >= 75){
-            score = score - 75;
+        if (score >= 35){
+            score = score - 35;
             thricegrade = true;
             displayscore.textContent = `Score: ${score}`;
             thrice.classList.add("hidden");
@@ -429,7 +431,7 @@ function question (){
     });
 
     function win () {
-        if (score >= 150) {
+        if (score >= 100) {
             red.classList.add("hidden");
             green.classList.add("hidden");
             blue.classList.add("hidden");
@@ -444,7 +446,8 @@ function question (){
             displayscore.classList.add("hidden");
             store.classList.add("hidden");
             displayend.classList.remove("hidden");
-            displayend.textContent = 'You Win!'
+            displayend.textContent = 'You Win!';
+            picture.src="https://avatarfiles.alphacoders.com/123/123871.png"
         }
     };
 
