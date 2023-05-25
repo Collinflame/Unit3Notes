@@ -15,6 +15,7 @@
         <div class="content">
             <h1>Pick The Right Color!</h1>
             <h4>Win at 100 Points!</h4>
+            <h5>Avatar Updates at 50, 75, and 100</h5>
             <div class="row">
                 <label for="user" id="sad">Enter Username</label>
                 <input type="text" id="user" name="user" style="width: 100px">
@@ -50,6 +51,26 @@
                 <div class="row">
                     <label for="three">3 Points For Right Answer</label>
                     <button id="three">Buy! at 35 Points</button>
+                </div>
+                <div class="row">
+                    <label for="ava1">Random Avatar</label>
+                    <button id="ava1">Buy! at 10 Points</button>
+                </div>
+                <div class="row">
+                    <label for="ava2">Random Avatar 2</label>
+                    <button id="ava2">Buy! at 10 Points</button>
+                </div>
+                <div class="row">
+                    <label for="ava3">Random Avatar 3</label>
+                    <button id="ava3">Buy! at 10 Points</button>
+                </div>
+                <div class="row">
+                    <label for="ava4">Random Avatar 4</label>
+                    <button id="ava4">Buy! at 10 Points</button>
+                </div>
+                <div class="row">
+                    <label for="ava5">Random Avatar 5</label>
+                    <button id="ava5">Buy! at 10 Points</button>
                 </div>
             </fieldset>
             <form>
@@ -408,6 +429,11 @@ function question (){
 
     let twice = document.getElementById('two');
     let thrice = document.getElementById('three');
+    let ava1 = document.getElementById('ava1');
+    let ava2 = document.getElementById('ava2');
+    let ava3 = document.getElementById('ava3');
+    let ava4 = document.getElementById('ava4');
+    let ava5 = document.getElementById('ava5');
     let twicegrade = false;
     let thricegrade = false;
     thrice.classList.add("hidden");
@@ -429,6 +455,46 @@ function question (){
             thrice.classList.add("hidden");
         }
     });
+    ava1.addEventListener('click', function (e){
+        if (score >= 10){
+            picture.src="https://www.chickensmoothie.com/oekaki/image/image.php?id=2275382&size=large&format=auto&rev=1429841501";
+            score = score - 10;
+            displayscore.textContent = `Score: ${score}`;
+            ava1.classList.add("hidden");
+        }
+    });
+    ava2.addEventListener('click', function (e){
+        if (score >= 10){
+            picture.src="https://i1.sndcdn.com/avatars-000354584510-msismh-t500x500.jpg";
+            score = score - 10;
+            displayscore.textContent = `Score: ${score}`;
+            ava2.classList.add("hidden");
+        }
+    });
+    ava3.addEventListener('click', function (e){
+        if (score >= 10){
+            picture.src="https://cdn.drawception.com/drawings/749497/oxDSMsHTxX.png";
+            score = score - 10;
+            displayscore.textContent = `Score: ${score}`;
+            ava3.classList.add("hidden");
+        }
+    });ava4.addEventListener('click', function (e){
+        if (score >= 10){
+            picture.src="https://i1.sndcdn.com/avatars-000358090664-0l2b8h-t500x500.jpg";
+            score = score - 10;
+            displayscore.textContent = `Score: ${score}`;
+            ava4.classList.add("hidden");
+        }
+    });
+    ava5.addEventListener('click', function (e){
+        if (score >= 10){
+            picture.src="https://avatarfiles.alphacoders.com/284/thumb-284739.png";
+            score = score - 10;
+            displayscore.textContent = `Score: ${score}`;
+            ava5.classList.add("hidden");
+        }
+    });
+
 
     function win () {
         if (score >= 100) {
